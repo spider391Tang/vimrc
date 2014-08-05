@@ -91,3 +91,6 @@
 [submodule "bundle/AutoTag"]
 	path = bundle/AutoTag
 	url = https://github.com/vim-scripts/AutoTag.git
+[submodule "bundle/emmit-vim"]
+	path = bundle/emmit-vim
+	url = https://github.com/mattn/emmet-vim.git
