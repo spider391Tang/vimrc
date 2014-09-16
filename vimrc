@@ -199,6 +199,9 @@ cmap cd. lcd %:p:h
    inoremap <C-u>5 <esc>yypVr^A
 "}
 
+" Quick edit vimrc
+nnoremap <leader>ev :vs $MYVIMRC<CR>
+
 "--------------------------------------------------------------------------- 
 " PROGRAMMING SHORTCUTS
 "--------------------------------------------------------------------------- 
