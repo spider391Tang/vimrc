@@ -208,6 +208,9 @@ cmap cd. lcd %:p:h
 " Quick edit vimrc
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 
+" Prevent CTRL-V are Paste for windows 
+unmap <C-V>
+
 "--------------------------------------------------------------------------- 
 " PROGRAMMING SHORTCUTS
 "--------------------------------------------------------------------------- 
