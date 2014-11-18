@@ -85,9 +85,6 @@
 [submodule "bundle/snipmate-snippets"]
 	path = bundle/snipmate-snippets
 	url = http://github.com/scrooloose/snipmate-snippets.git
-[submodule "bundle/AutoTag"]
-	path = bundle/AutoTag
-	url = http://github.com/vim-scripts/AutoTag.git
 [submodule "bundle/emmit-vim"]
 	path = bundle/emmit-vim
 	url = http://github.com/mattn/emmet-vim.git
