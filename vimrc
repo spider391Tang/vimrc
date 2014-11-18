@@ -45,12 +45,20 @@ syntax on		" syntax highlight
 set hlsearch		" search highlighting
 
 if has("gui_running")	" GUI color and font settings
-  set guifont=Osaka-Mono:h20
+  set guifont=Consolas:h14
   set background=dark 
   set t_Co=256          " 256 color mode
   set cursorline        " highlight current line
   colors moria
   highlight CursorLine          guibg=#003853 ctermbg=24  gui=none cterm=none
+
+  let $LANG="zh_TW.UTF-8"
+  set langmenu=zh_tw.utf-8
+  set encoding=utf8
+  
+  source $VIMRUNTIME/delmenu.vim
+  source $VIMRUNTIME/menu.vim
+
 else
 " terminal color settings
   colors vgod
