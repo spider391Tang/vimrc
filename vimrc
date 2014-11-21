@@ -217,7 +217,9 @@ cmap cd. lcd %:p:h
 nnoremap <leader>ev :vs $MYVIMRC<CR>
 
 " Prevent CTRL-V are Paste for windows 
-unmap <C-V>
+if mapcheck("<C-V>") != ""
+    unmap <C-V>
+endif
 
 "--------------------------------------------------------------------------- 
 " PROGRAMMING SHORTCUTS
