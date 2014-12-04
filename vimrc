@@ -213,8 +213,9 @@ cmap cd. lcd %:p:h
    inoremap <C-u>5 <esc>yypVr^A
 "}
 
-" Quick edit vimrc
+" Quick edit and source vimrc
 nnoremap <leader>ev :vs $MYVIMRC<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " Prevent CTRL-V are Paste for windows 
 if mapcheck("<C-V>") != ""
@@ -336,7 +337,7 @@ autocmd FileType *
     \ endif
 let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
 let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
-
+let g:SuperTabMappingForward="<tab>" 
 " --- EasyMotion
 "let g:EasyMotion_leader_key = '<Leader>m' " default is <Leader>w
 hi link EasyMotionTarget ErrorMsg

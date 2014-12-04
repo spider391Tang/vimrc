@@ -64,9 +64,6 @@
 [submodule "bundle/indent-motion"]
 	path = bundle/indent-motion
 	url = http://github.com/vim-scripts/indent-motion.git
-[submodule "bundle/vim-snipmate"]
-	path = bundle/vim-snipmate
-	url = http://github.com/davidhalter/vim-snipmate.git
 [submodule "bundle/tlib_vim"]
 	path = bundle/tlib_vim
 	url = http://github.com/tomtom/tlib_vim.git
@@ -94,3 +91,6 @@
 [submodule "bundle/git-vim"]
 	path = bundle/git-vim
 	url = https://github.com/motemen/git-vim.git
+[submodule "bundle/vim-snipmate"]
+	path = bundle/vim-snipmate
+	url = https://github.com/garbas/vim-snipmate.git
