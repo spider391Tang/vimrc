@@ -5,8 +5,7 @@
 " read https://github.com/vgod/vimrc/blob/master/README.md for more info
 
 
-" For pathogen.vim: auto load all plugins in .vim/bundle
-
+" For pathogen.vim: auto load all plugins in .vim/bundle {{{
 let g:pathogen_disabled = []
 if !has('gui_running')
    call add(g:pathogen_disabled, 'powerline')
@@ -14,8 +13,9 @@ endif
 
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+" }}}
 
-" General Settings
+" General Settings {{{
 
 set nocompatible	" not compatible with the old-fashion vi mode
 set bs=2		" allow backspacing over everything in insert mode
@@ -23,26 +23,17 @@ set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set autoread		" auto read when file is changed from outside
 
-
 filetype off          " necessary to make ftdetect work on Linux
 syntax on
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 
+syntax on		" syntax highlight
+set hlsearch		" search highlighting
 
 " auto reload vimrc when editing it
 autocmd! bufwritepost .vimrc source ~/.vimrc
-
-" Vimscript file settings ---------------------- {{{
-augroup filetype_vim
-    autocmd!
-    autocmd FileType vim setlocal foldmethod=marker
-augroup END
-" }}}
-
-syntax on		" syntax highlight
-set hlsearch		" search highlighting
 
 if has("gui_running")	" GUI color and font settings
   set guifont=Consolas:h14, guifont=Osaka-Mono:h20
@@ -86,16 +77,18 @@ set noerrorbells
 set novisualbell
 set t_vb=
 set tm=500
+" }}}
 
-" TAB setting{
+" TAB setting {{{
    set expandtab        "replace <TAB> with spaces
    set softtabstop=4 
    set shiftwidth=4 
 
    au FileType Makefile set noexpandtab
-"}      							
+" }}}      							
 
-" status line {
+" status line ---------------------------------- {{{
+" See http://learnvimscriptthehardway.stevelosh.com/chapters/17.html  for reference
 set laststatus=2
 set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \ 
 set statusline+=\ \ \ [%{&ff}/%Y] 
@@ -115,12 +108,20 @@ function! HasPaste()
     endif
 endfunction
 
-"}
+" }}}
 
 
-" C/C++ specific settings
+" C/C++ specific settings -------------------------{{{
 autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 autocmd FileType c,cpp,cc  set nu
+" }}}
+
+" Vimscript file settings ---------------------- {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
 
 "Restore cursor to file position in previous editing session
 set viminfo='10,\"100,:20,%,n~/.viminfo
@@ -244,8 +245,6 @@ fun! IncludeGuard()
    call append( line("$"), "#endif // for #ifndef " . guard)
 endfun
 
-
-
 " Enable omni completion. (Ctrl-X Ctrl-O)
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -294,13 +293,12 @@ fun! Big5()
 	set fileencoding=big5
 endfun
 
-
 "--------------------------------------------------------------------------- 
 " PLUGIN SETTINGS
 "--------------------------------------------------------------------------- 
 
-
-" ------- vim-latex - many latex shortcuts and snippets {
+" ------- vim-latex {{{
+" many latex shortcuts and snippets
 
 " IMPORTANT: win32 users will need to have 'shellslash' set so that latex
 " can be called correctly.
@@ -311,10 +309,10 @@ set grepprg=grep\ -nH\ $*
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
 
-"}
+" }}}
 
-
-" --- AutoClose - Inserts matching bracket, paren, brace or quote 
+" --- AutoClose --------- {{{
+" Inserts matching bracket, paren, brace or quote
 " fixed the arrow key problems caused by AutoClose
 if !has("gui_running")	
    set term=linux
@@ -328,13 +326,13 @@ if !has("gui_running")
    nmap OC l
    nmap OD h
 endif
+" }}}
 
-
-
-" --- Command-T
+" --- Command-T {{{
 let g:CommandTMaxHeight = 15
+" }}}
 
-" --- SuperTab
+" --- SuperTab {{{
 let g:SuperTabDefaultCompletionType = "context"
 autocmd FileType *
     \ if &omnifunc != '' |
@@ -343,27 +341,33 @@ autocmd FileType *
 let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
 let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 let g:SuperTabMappingForward="<tab>" 
-" --- EasyMotion
+" }}}
+
+" --- EasyMotion {{{
 "let g:EasyMotion_leader_key = '<Leader>m' " default is <Leader>w
 hi link EasyMotionTarget ErrorMsg
 hi link EasyMotionShade  Comment
+" }}}
 
-
-" --- TagBar
+" --- TagBar {{{
 " toggle TagBar with F7
 nnoremap <silent> <F7> :TagbarToggle<CR> 
 " set focus to TagBar when opening it
 let g:tagbar_autofocus = 1
+" }}}
 
-" --- PowerLine
-" let g:Powerline_symbols = 'fancy' " require fontpatcher
-"
+" --- PowerLine {{{
+let g:Powerline_symbols = 'fancy' " require fontpatcher
+" }}}
 
-" --- SnipMate
+" --- SnipMate {{{
 let g:snipMateAllowMatchingDot = 0
+" }}}
 
-" --- coffee-script
+" --- coffee-script {{{
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw! " recompile coffee scripts on write
+" }}}
 
-" --- vim-gitgutter
+" --- vim-gitgutter {{{
 let g:gitgutter_enabled = 1
+" }}}
