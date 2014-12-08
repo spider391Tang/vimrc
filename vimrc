@@ -36,12 +36,18 @@ set hlsearch		" search highlighting
 autocmd! bufwritepost .vimrc source ~/.vimrc
 
 if has("gui_running")	" GUI color and font settings
-  set guifont=Consolas:h14, guifont=Osaka-Mono:h20
+  if has("gui_mac") || has("gui_macvim")
+    set guifont=Osaka-Mono:h20
+  else
+    set guifont=Consolas:h14, guifont=Osaka-Mono:h20
+  endif
   set background=dark 
   set t_Co=256          " 256 color mode
   set cursorline        " highlight current line
   colors moria
-  highlight CursorLine          guibg=#003853 ctermbg=24  gui=none cterm=none
+" Reference https://github.com/daylerees/colour-schemes/blob/master/vim/colors/peacock.vim
+  highlight Normal guibg=#2b2a27
+  highlight CursorLine guibg=#003853 ctermbg=24 gui=none cterm=none
 
   let $LANG="zh_TW.UTF-8"
   set langmenu=zh_tw.utf-8
@@ -109,7 +115,6 @@ function! HasPaste()
 endfunction
 
 " }}}
-
 
 " C/C++ specific settings -------------------------{{{
 autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
