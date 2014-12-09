@@ -119,6 +119,7 @@ endfunction
 " C/C++ specific settings -------------------------{{{
 autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 autocmd FileType c,cpp,cc  set nu
+autocmd FileType c,cpp,cc  autocmd BufWritePre <buffer> :%s/\s\+$//e
 " }}}
 
 " Vimscript file settings ---------------------- {{{
@@ -240,8 +241,8 @@ inoremap jk <esc>
 " Ctrl-[ jump out of the tag stack (undo Ctrl-])
 map <C-[> <ESC>:po<CR>
 
-" ,g generates the header guard
-map <leader>g :call IncludeGuard()<CR>
+" ,h generates the header guard
+map <leader>h :call IncludeGuard()<CR>
 fun! IncludeGuard()
    let basename = substitute(bufname(""), '.*/', '', '')
    let guard = '_' . substitute(toupper(basename), '\.', '_', "H")
