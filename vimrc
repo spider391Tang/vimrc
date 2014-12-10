@@ -95,11 +95,12 @@ set tm=500
 
 " status line ---------------------------------- {{{
 " See http://learnvimscriptthehardway.stevelosh.com/chapters/17.html  for reference
-set laststatus=2
-set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \ 
-set statusline+=\ \ \ [%{&ff}/%Y] 
-set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\ 
-set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
+" 20141210 -- using air-line instead
+" set laststatus=2
+" set statusline=\ %{HasPaste()}%<%-15.25(%f%)%m%r%h\ %w\ \ 
+" set statusline+=\ \ \ [%{&ff}/%Y] 
+" set statusline+=\ \ \ %<%20.30(%{hostname()}:%{CurDir()}%)\ 
+" set statusline+=%=%-10.(%l,%c%V%)\ %p%%/%L
 
 function! CurDir()
     let curdir = substitute(getcwd(), $HOME, "~", "")
@@ -362,10 +363,6 @@ nnoremap <silent> <F7> :TagbarToggle<CR>
 let g:tagbar_autofocus = 1
 " }}}
 
-" --- PowerLine {{{
-let g:Powerline_symbols = 'fancy' " require fontpatcher
-" }}}
-
 " --- SnipMate {{{
 let g:snipMateAllowMatchingDot = 0
 " }}}
@@ -376,4 +373,27 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw! " recompile c
 
 " --- vim-gitgutter {{{
 let g:gitgutter_enabled = 1
+" }}}
+
+" --- vim-airline {{{
+" set status line
+set laststatus=2
+" enable powerline-fonts
+let g:airline_powerline_fonts = 1
+
+" enable tabline
+let g:airline#extensions#tabline#enabled = 1
+"   set left separator
+let g:airline#extensions#tabline#left_sep = ' '
+"   set left separator which are not editting
+let g:airline#extensions#tabline#left_alt_sep = '|'
+"   show buffer number
+let g:airline#extensions#tabline#buffer_nr_show = 1
+" }}}
+
+" --- ctrlp.vim {{{
+"  Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
+"  f means fuzzy
+let g:ctrlp_map = '<leader>f'
+nnoremap <leader>b :CtrlPBuffer<cr>
 " }}}
