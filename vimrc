@@ -397,3 +397,6 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:ctrlp_map = '<leader>f'
 nnoremap <leader>b :CtrlPBuffer<cr>
 " }}}
+
+" --- syntastic {{{
+" }}}
