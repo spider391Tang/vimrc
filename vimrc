@@ -37,7 +37,7 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 
 if has("gui_running")	" GUI color and font settings
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Osaka-Mono:h20
+    set guifont=Osaka-Mono:h16
   else
     set guifont=Consolas:h14, guifont=Osaka-Mono:h20
   endif
