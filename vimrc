@@ -235,6 +235,9 @@ endif
 " Using jk is great because the keys are right under two of your strongest fingers and you don't have to perform a chord
 inoremap jk <esc>
 
+" Easy Expansion of the Active File Directory
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 "--------------------------------------------------------------------------- 
 " PROGRAMMING SHORTCUTS
 "--------------------------------------------------------------------------- 
