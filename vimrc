@@ -120,7 +120,7 @@ endfunction
 " C/C++ specific settings -------------------------{{{
 autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 autocmd FileType c,cpp,cc  set nu
-autocmd FileType c,cpp,cc  autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType c,cpp,cc,java  autocmd BufWritePre <buffer> :%s/\s\+$//e
 " }}}
 
 " Vimscript file settings ---------------------- {{{
