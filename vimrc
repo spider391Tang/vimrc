@@ -364,6 +364,7 @@ hi link EasyMotionShade  Comment
 nnoremap <silent> <F7> :TagbarToggle<CR> 
 " set focus to TagBar when opening it
 let g:tagbar_autofocus = 1
+let g:tagbar_ctags_bin = "/opt/local/bin/ctags"
 " }}}
 
 " --- SnipMate {{{
