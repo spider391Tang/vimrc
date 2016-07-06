@@ -364,7 +364,6 @@ hi link EasyMotionShade  Comment
 nnoremap <silent> <F7> :TagbarToggle<CR> 
 " set focus to TagBar when opening it
 let g:tagbar_autofocus = 1
-let g:tagbar_ctags_bin = "/opt/local/bin/ctags"
 " }}}
 
 " --- SnipMate {{{
@@ -377,6 +376,7 @@ au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw! " recompile c
 
 " --- vim-gitgutter {{{
 let g:gitgutter_enabled = 1
+let g:gitgutter_grep_command = 'grep -e'
 " }}}
 
 " --- vim-airline {{{
