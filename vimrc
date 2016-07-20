@@ -19,7 +19,7 @@ call pathogen#helptags()
 
 set nocompatible	" not compatible with the old-fashion vi mode
 set bs=2		" allow backspacing over everything in insert mode
-set history=50		" keep 50 lines of command line history
+set history=200		" keep 200 lines of command line history
 set ruler		" show the cursor position all the time
 set autoread		" auto read when file is changed from outside
 
@@ -40,6 +40,7 @@ if has("gui_running")	" GUI color and font settings
     set guifont=Osaka-Mono:h16
   else
     set guifont=Consolas:h14, guifont=Osaka-Mono:h20
+    set guifontwide=YaHei\ Consolas\ Hybrid:h9
   endif
   set background=dark 
   set t_Co=256          " 256 color mode
@@ -51,7 +52,7 @@ if has("gui_running")	" GUI color and font settings
 
   let $LANG="zh_TW.UTF-8"
   set langmenu=zh_tw.utf-8
-  set encoding=utf8
+  set encoding=utf-8
   
   source $VIMRUNTIME/delmenu.vim
   source $VIMRUNTIME/menu.vim
@@ -238,6 +239,9 @@ inoremap jk <esc>
 " Easy Expansion of the Active File Directory
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
+" Open the folder containing the currently open file
+nnoremap <silent> <C-F5> :if expand("%:p:h") != "" \| set noshellslash \| exec "!start explorer.exe" expand("%:p:h:S") \| set shellslash \|endif<CR>
+
 "--------------------------------------------------------------------------- 
 " PROGRAMMING SHORTCUTS
 "--------------------------------------------------------------------------- 
@@ -400,6 +404,7 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 "  f means fuzzy
 let g:ctrlp_map = '<leader>f'
 nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>a :CtrlPMixed<cr>
 " }}}
 
 " --- syntastic {{{
