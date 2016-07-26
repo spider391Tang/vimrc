@@ -25,12 +25,6 @@
 [submodule "bundle/matchit"]
 	path = bundle/matchit
 	url = http://github.com/vim-scripts/matchit.zip.git
-[submodule "bundle/supertab"]
-	path = bundle/supertab
-	url = http://github.com/ervandew/supertab.git
-[submodule "bundle/OmniCppComplete"]
-	path = bundle/OmniCppComplete
-	url = http://github.com/vim-scripts/OmniCppComplete.git
 [submodule "bundle/javacomplete"]
 	path = bundle/javacomplete
 	url = http://github.com/vim-scripts/javacomplete
@@ -97,12 +91,6 @@
 [submodule "bundle/vim-easygrep"]
 	path = bundle/vim-easygrep
 	url = https://github.com/dkprice/vim-easygrep.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = https://github.com/scrooloose/syntastic.git
-[submodule "bundle/jedi-vim"]
-	path = bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
 [submodule "bundle/vim-qml"]
 	path = bundle/vim-qml
 	url = https://github.com/peterhoeg/vim-qml
@@ -112,3 +100,9 @@
 [submodule "bundle/vim-shell"]
 	path = bundle/vim-shell
 	url = https://github.com/xolox/vim-shell.git
+[submodule "bundle/youcompleteme"]
+	path = bundle/youcompleteme
+	url = https://github.com/valloric/youcompleteme
+[submodule "bundle/YCM-Generator"]
+	path = bundle/YCM-Generator
+	url = https://github.com/rdnetto/YCM-Generator.git
