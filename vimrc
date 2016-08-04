@@ -224,8 +224,8 @@ cmap cd. lcd %:p:h
 "}
 
 " Quick edit and source vimrc
-nnoremap <leader>ev :vs $MYVIMRC<CR>
-nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>ev :vs $VIM/vimfiles/vimrc<CR>
+nnoremap <leader>sv :source $VIM/vimfiles/vimrc<CR>
 
 " Prevent CTRL-V are Paste for windows 
 if mapcheck("<C-V>") != ""
