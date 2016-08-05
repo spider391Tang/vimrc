@@ -138,12 +138,12 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 "--------------------------------------------------------------------------- 
 " Tip #382: Search for <cword> and replace with input() in all open buffers 
 "--------------------------------------------------------------------------- 
+
 fun! Replace() 
     let s:word = input("Replace " . expand('<cword>') . " with:") 
     :exe 'bufdo! %s/\<' . expand('<cword>') . '\>/' . s:word . '/ge' 
     :unlet! s:word 
 endfun 
-
 
 "--------------------------------------------------------------------------- 
 " USEFUL SHORTCUTS
@@ -310,6 +310,22 @@ endfun
 "--------------------------------------------------------------------------- 
 " PLUGIN SETTINGS
 "--------------------------------------------------------------------------- 
+
+" ------- gundo {{{
+
+nnoremap <F1> :GundoToggle<CR>
+
+" }}}
+
+" ------- ack.vim {{{
+
+let g:ackprg = 'ag --vimgrep --smart-case'
+cnoreabbrev ag Ack
+cnoreabbrev aG Ack
+cnoreabbrev Ag Ack
+cnoreabbrev AG Ack
+
+" }}}
 
 " ------- vim-latex {{{
 " many latex shortcuts and snippets
