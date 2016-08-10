@@ -118,3 +118,9 @@
 [submodule "bundle/vim-visual-star-search"]
 	path = bundle/vim-visual-star-search
 	url = https://github.com/nelstrom/vim-visual-star-search.git
+[submodule "bundle/vim-textobj-clang"]
+	path = bundle/vim-textobj-clang
+	url = https://github.com/libclang-vim/vim-textobj-clang.git
+[submodule "bundle/vim-abolish"]
+	path = bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git

@@ -224,8 +224,13 @@ cmap cd. lcd %:p:h
 "}
 
 " Quick edit and source vimrc
-nnoremap <leader>ev :vs $VIM/vimfiles/vimrc<CR>
-nnoremap <leader>sv :source $VIM/vimfiles/vimrc<CR>
+if has("gui_mac") || has("gui_macvim")
+  nnoremap <leader>ev :vs $HOME/.vim/vimrc<CR>
+  nnoremap <leader>sv :source $HOME/.vim/vimrc<CR>
+else
+  nnoremap <leader>ev :vs $HOME/.vim/vimrc<CR>
+  nnoremap <leader>sv :source $HOME/.vim/vimrc<CR>
+endif
 
 " Prevent CTRL-V are Paste for windows 
 if mapcheck("<C-V>") != ""
@@ -241,6 +246,10 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Open the folder containing the currently open file
 nnoremap <silent> <C-F5> :if expand("%:p:h") != "" \| set noshellslash \| exec "!start explorer.exe" expand("%:p:h:S") \| set shellslash \|endif<CR>
+
+" Fixing the & Command
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
 
 "--------------------------------------------------------------------------- 
 " PROGRAMMING SHORTCUTS
@@ -310,6 +319,12 @@ endfun
 "--------------------------------------------------------------------------- 
 " PLUGIN SETTINGS
 "--------------------------------------------------------------------------- 
+
+" ------- vim-textobj-clang {{{
+
+" let g:textobj_clang_more_mappings = 1
+
+" }}}
 
 " ------- gundo {{{
 
