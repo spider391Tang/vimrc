@@ -55,9 +55,6 @@
 [submodule "bundle/vim-addon-mw-utils"]
 	path = bundle/vim-addon-mw-utils
 	url = http://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "bundle/vim-coffee-script"]
-	path = bundle/vim-coffee-script
-	url = http://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/vim-gitgutter"]
 	path = bundle/vim-gitgutter
 	url = http://github.com/airblade/vim-gitgutter.git
@@ -124,3 +121,6 @@
 [submodule "bundle/vim-abolish"]
 	path = bundle/vim-abolish
 	url = https://github.com/tpope/vim-abolish.git
+[submodule "bundle/vim-qargs"]
+	path = bundle/vim-qargs
+	url = https://github.com/nelstrom/vim-qargs.git
