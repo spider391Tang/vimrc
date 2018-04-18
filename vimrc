@@ -37,7 +37,7 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 
 if has("gui_running")	" GUI color and font settings
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Osaka-Mono:h18
+    set guifont=Consolas\ Bold:h14
   else
     set guifont=Consolas:h14, guifont=Osaka-Mono:h20
     set guifontwide=YaHei\ Consolas\ Hybrid:h9
@@ -438,4 +438,9 @@ let g:jedi#usages_command = "<leader>n"
 let g:jedi#completions_command = "<S-Space>"
 let g:jedi#rename_command = "<leader>r"
 let g:jedi#show_call_signatures = "1"
+" }}}
+"
+" --- nerdtree {{{
+silent! nmap <F3> :NERDTreeFind<CR>
+let g:NERDTreeMapActivateNode="<F3>"
 " }}}
