@@ -118,3 +118,6 @@
 [submodule "bundle/vim-qargs"]
 	path = bundle/vim-qargs
 	url = https://github.com/nelstrom/vim-qargs.git
+[submodule "bundle/tabnine-vim"]
+	path = bundle/tabnine-vim
+	url = https://github.com/zxqfl/tabnine-vim
