@@ -118,3 +118,9 @@
 [submodule "bundle/tabnine-vim"]
 	path = bundle/tabnine-vim
 	url = https://github.com/zxqfl/tabnine-vim
+[submodule "bundle/async-vim"]
+	path = bundle/async-vim
+	url = https://github.com/prabirshrestha/async.vim.git
+[submodule "bundle/coc-nvim"]
+	path = bundle/coc-nvim
+	url = https://github.com/neoclide/coc.nvim.git

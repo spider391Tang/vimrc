@@ -37,7 +37,8 @@ autocmd! bufwritepost .vimrc source ~/.vimrc
 
 if has("gui_running")	" GUI color and font settings
   if has("gui_mac") || has("gui_macvim")
-    set guifont=Consolas\ Bold:h14
+    " set guifont=Anonymous\ Pro:h16
+    set guifont=Consolas\ Bold:h16
   else
     set guifont=Consolas:h14, guifont=Osaka-Mono:h20
     set guifontwide=YaHei\ Consolas\ Hybrid:h9
@@ -407,7 +408,8 @@ let g:gitgutter_grep_command = 'grep -e'
 " set status line
 set laststatus=2
 " enable powerline-fonts
-let g:airline_powerline_fonts = 1
+" mark below powerline_fonts to resolve chinese can't be displayed
+" let g:airline_powerline_fonts = 1
 
 " enable tabline
 let g:airline#extensions#tabline#enabled = 1
